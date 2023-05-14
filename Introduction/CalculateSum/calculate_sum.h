@@ -8,6 +8,6 @@
 
 #pragma once
 
-extern const int ROOT_RANK_CALC;
+extern const int ROOT_RANK_SUM;
 
 void calculateSum(int argc, char *argv[]);

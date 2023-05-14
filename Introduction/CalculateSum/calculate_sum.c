@@ -4,7 +4,7 @@
 
 #include "calculate_sum.h"
 
-const int ROOT_RANK_CALC = 0;
+const int ROOT_RANK_SUM = 0;
 
 void calculateSum(int argc, char *argv[])
 {
@@ -47,9 +47,9 @@ void calculateSum(int argc, char *argv[])
         sum += 1.0 / i;
     }
 
-    MPI_Reduce(&sum, &result, 1, MPI_DOUBLE, MPI_SUM, ROOT_RANK_CALC, MPI_COMM_WORLD);
+    MPI_Reduce(&sum, &result, 1, MPI_DOUBLE, MPI_SUM, ROOT_RANK_SUM, MPI_COMM_WORLD);
 
-    if (comm_rank == ROOT_RANK_CALC)
+    if (comm_rank == ROOT_RANK_SUM)
     {
         printf("Result sum = %f\n", result);
     }
