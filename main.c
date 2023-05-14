@@ -11,10 +11,12 @@ int main(int argc, char *argv[])
 
     if (strcmp(argv[1], "hello") == 0)
         helloWorld(argc, argv);
-    if (strcmp(argv[1], "calc_sum") == 0)
+    if (strcmp(argv[1], "sum") == 0)
         calculateSum(argc, argv);
     if (strcmp(argv[1], "round_trip") == 0)
         roundTrip(argc, argv);
+    if (strcmp(argv[1], "delay") == 0)
+        calculateDelay(argc, argv);
 
     return 0;
 }
