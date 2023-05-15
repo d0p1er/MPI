@@ -8,6 +8,8 @@
 #include "Introduction/CalculateSum/calculate_sum.h"
 #include "Introduction/RoundTrip/round_trip.h"
 #include "TransportEquation/CalculateDelay/calculate_delay.h"
+//#include "TransportEquation/ConsistentSolution/consistent_solution.h"
+#include "TransportEquation/ParallelSolution/parallel_solution.h"
 
 #pragma once
 
