@@ -16,27 +16,6 @@
 
 const int ROOT_RANK_PARALLEL = 0;
 
-const double a = 2.0;
-const double X = 1.0;
-const double T = 1.0;
-
-const double h = 0.002;
-const double tau = 0.001;
-
-double f(double t, double x)
-{
-    return x / X + t / T;
-}
-
-double phi(double x)
-{
-    return cos(M_PI * x / X );
-}
-
-double psi(double t)
-{
-    return exp(-t / T);
-}
 
 void parallelSolution(int argc, char *argv[])
 {
@@ -78,7 +57,8 @@ void parallelSolution(int argc, char *argv[])
     MPI_Finalize();
 }
 
-double **initValues(int n_x, int K, int x_start, int len) {
+double **initValues(int n_x, int K, int x_start, int len)
+{
     double **res = (double **) calloc(K, sizeof(double *));
     for (int t = 0; t < K; t++)
         res[t] = (double *) calloc(n_x, sizeof(double));
@@ -93,7 +73,8 @@ double **initValues(int n_x, int K, int x_start, int len) {
     return res;
 }
 
-void computePart(double **part, size_t x_start, size_t K, size_t len, int comm_rank, int comm_size) {
+void computePart(double **part, size_t x_start, size_t K, size_t len, int comm_rank, int comm_size)
+{
     if (x_start == 0)
     {
         for (int k = 0; k < K; k++)

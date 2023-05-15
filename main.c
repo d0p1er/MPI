@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
         roundTrip(argc, argv);
     if (strcmp(argv[1], "delay") == 0)
         calculateDelay(argc, argv);
-//    if (strcmp(argv[1], "sol") == 0)
-//        consistentSolution(argc, argv);
+    if (strcmp(argv[1], "sol_con") == 0)
+        consistentSolution(argc, argv);
     if (strcmp(argv[1], "sol_par") == 0)
         parallelSolution(argc, argv);
 

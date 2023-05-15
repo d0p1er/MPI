@@ -16,28 +16,6 @@
 
 const int ROOT_RANK_CONSISTENT = 0;
 
-const double a = 2.0;
-const double X = 1.0;
-const double T = 1.0;
-
-const double h = 0.002;
-const double tau = 0.001;
-
-double f(double t, double x)
-{
-    return x / X + t / T;
-}
-
-double phi(double x)
-{
-    return cos(M_PI * x / X );
-}
-
-double psi(double t)
-{
-    return exp(-t / T);
-}
-
 void consistentSolution(int argc, char *argv[])
 {
     size_t K = T / tau;

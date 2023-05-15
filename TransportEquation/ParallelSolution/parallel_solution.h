@@ -7,14 +7,11 @@
 #include "stdlib.h"
 #include "math.h"
 #include "string.h"
+#include "../transport_equation.h"
 
 #pragma once
 
 extern const int ROOT_RANK_PARALLEL;
-
-double f(double t, double x);
-double phi(double x);
-double psi(double t);
 
 void parallelSolution(int argc, char *argv[]);
 double **initValues(int n_x, int n_t, int x_start, int len);
