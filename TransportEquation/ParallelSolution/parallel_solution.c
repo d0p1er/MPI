@@ -16,9 +16,19 @@
 
 const int ROOT_RANK_PARALLEL = 0;
 
+//double tau = 0.001;
+//double h = 0.002;
 
 void parallelSolution(int argc, char *argv[])
 {
+    if (argc == 4)
+    {
+        int k =  atoi(argv[2]);
+        int m =  atoi(argv[3]);
+
+        tau = T / k;
+        h = X / m;
+    }
     size_t K = T / tau;
     size_t M = X / h;
 
@@ -50,9 +60,13 @@ void parallelSolution(int argc, char *argv[])
 
 
     if (comm_rank == ROOT_RANK_PARALLEL)
-        printf("time: %f\n", time_end - time_start);
+        printf("%lf", time_end - time_start);
 
     savePart(values_part, K, M, x_start, len);
+
+    for (size_t k = 0; k < K; k++)
+        free(values_part[k]);
+    free(values_part);
 
     MPI_Finalize();
 }

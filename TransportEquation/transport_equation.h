@@ -8,8 +8,8 @@ extern const double a;
 extern const double X;
 extern const double T;
 
-extern const double h;
-extern const double tau;
+extern double h;
+extern double tau;
 
 double f(double t, double x);
 double phi(double x);

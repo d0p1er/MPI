@@ -17,8 +17,8 @@ const double a = 2.0;
 const double X = 1.0;
 const double T = 1.0;
 
-const double h = 0.002;
-const double tau = 0.001;
+double h = 0.002;
+double tau = 0.001;
 
 double f(double t, double x)
 {

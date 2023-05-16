@@ -16,8 +16,19 @@
 
 const int ROOT_RANK_CONSISTENT = 0;
 
+//double tau = 0.001;
+//double h = 0.002;
+
 void consistentSolution(int argc, char *argv[])
 {
+    if (argc == 4)
+    {
+        int k =  atoi(argv[2]);
+        int m =  atoi(argv[3]);
+
+        tau = T / k;
+        h = X / m;
+    }
     size_t K = T / tau;
     size_t M = X / h;
 
